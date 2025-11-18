@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction System | Project</title>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Main site CSS (go up one directory) -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="portfolio_body">
+
+    <!-- Sidebar (desktop) -->
+    <nav class="sidebar barblock hide_small">
+        <div class="sidebar_inner">
+            <img src="../images/profile.jpg" alt="George McDonald" class="sidebar_profile">
+            <a href="../index.html#home" class="bar_item button hover_black"><i class="fa fa-home"></i><span>Home</span></a>
+            <a href="../index.html#about" class="bar_item button hover_black"><i class="fa fa-user"></i><span>About</span></a>
+            <a href="../index.html#projects" class="bar_item button hover_black"><i class="fa fa-briefcase"></i><span>Projects</span></a>
+            <a href="../index.html#contact" class="bar_item button hover_black"><i class="fa fa-envelope"></i><span>Contact</span></a>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="topnav hide_large hide_medium" id="myTopnav">
+        <div class="topnav_inner">
+            <a href="../index.html#home" class="topnav_link">Home</a>
+            <a href="../index.html#about" class="topnav_link">About</a>
+            <a href="../index.html#projects" class="topnav_link">Projects</a>
+            <a href="../index.html#contact" class="topnav_link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main" class="main_content">
+
+        <!-- Title Section -->
+        <header class="section" style="padding-top: 40px;">
+            <h1 class="Large_title">Weather Prediction System</h1>
+            <p class="hero_subtitle">Python • Time Series • Ridge Regression • Cross-Validation</p>
+            <p class="project_date">Completed: 16th August 2024</p>
+            <a href="../index.html#projects" class="secondary_button" style="margin-top: 12px;">
+                ← Back to Projects
+            </a>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Project Overview</h2>
+            <p>
+                This project explores the use of machine learning to build a short-term weather prediction 
+                system. Using historical hourly weather data from Kaggle, I developed a regression pipeline 
+                to forecast temperature up to 30 days beyond the end of the dataset.
+            </p>
+            <p style="margin-top: 10px;">
+                The system is built around <strong>Ridge Regression</strong> with cross-validation, focusing on 
+                predicting future temperatures for the city of Portland based on meteorological variables 
+                such as humidity, pressure, wind speed, and wind direction. The work includes data 
+                cleaning, feature engineering, model training, evaluation, and using the final model to 
+                extrapolate future temperature trends.
+            </p>
+            <p style="margin-top: 10px;">
+                This is a <strong>completed project</strong>, originally developed as part of my CI513 module in 2024, 
+                and it demonstrates my ability to design an end-to-end regression pipeline on a large 
+                real-world dataset.
+            </p>
+
+            <div class="skills_grid" style="margin-top: 20px;">
+                <span class="skill_chip">Python</span>
+                <span class="skill_chip">Pandas</span>
+                <span class="skill_chip">NumPy</span>
+                <span class="skill_chip">Scikit-Learn</span>
+                <span class="skill_chip">Ridge Regression</span>
+                <span class="skill_chip">RidgeCV</span>
+                <span class="skill_chip">Repeated K-Fold</span>
+                <span class="skill_chip">Time Series</span>
+                <span class="skill_chip">Data Cleaning</span>
+                <span class="skill_chip">Feature Engineering</span>
+            </div>
+
+            <div style="margin-top: 16px; display:flex; flex-wrap:wrap; gap:10px;">
+                <a href="../Weather%20Prediction%20Report.pdf" class="download_cv_button" target="_blank" rel="noopener">
+                    <i class="fa fa-file-pdf"></i>
+                    <span>View Technical Report (PDF)</span>
+                </a>
+                <!-- Optional GitHub link if you have one -->
+                <!--
+                <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" class="secondary_button" target="_blank" rel="noopener">
+                    View Code on GitHub
+                </a>
+                -->
+            </div>
+        </section>
+
+        <!-- Dataset Section -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Dataset</h2>
+            <p>
+                The project uses the 
+                <em>Historical Hourly Weather Data 2012–2017</em> dataset from Kaggle, which contains 
+                meteorological readings for 36 cities around the world.
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li><strong>Source:</strong> Kaggle – Historical Hourly Weather Data (2012–2017)</li>
+                <li><strong>Original scope:</strong> 36 cities × ~45,254 hourly entries per city</li>
+                <li><strong>Variables:</strong> Temperature, humidity, pressure, wind speed, wind direction, etc.</li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                For this project, I focused on <strong>Portland</strong>, extracting its data from the collection of CSV 
+                files and merging them into a single cleaned DataFrame. This allowed me to design and 
+                evaluate a weather model specific to one location while still leveraging a large historical 
+                dataset.
+            </p>
+        </section>
+
+        <!-- Data Cleaning & Transformation -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Data Cleaning & Transformation</h2>
+            <p>
+                A major part of the work involved transforming the raw Kaggle data into a form suitable 
+                for modelling. This included:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>Merging multiple city-level CSV files into a single DataFrame for Portland.</li>
+                <li>Converting temperature from Kelvin to Celsius for readability and interpretability.</li>
+                <li>Parsing the timestamp column and creating derived features such as Year, Month, Day, and Hour.</li>
+                <li>Handling missing values using <code>dropna()</code> for incomplete rows.</li>
+                <li>Removing duplicate records via <code>drop_duplicates()</code> to avoid skewing the model.</li>
+                <li>Retaining genuine zeros (e.g. calm winds) to preserve valid meteorological readings.</li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                After cleaning and transforming the data, I exported the processed dataset to a new CSV file 
+                specifically for modelling, ensuring a reproducible pipeline and separation between raw and 
+                prepared data.
+            </p>
+        </section>
+
+        <!-- Model & Approach -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Model & Approach</h2>
+            <p>
+                The core of the system is a <strong>Ridge Regression</strong> model, implemented with 
+                <strong>RidgeCV</strong> from scikit-learn to automatically select the optimal regularisation parameter (λ). 
+                Ridge Regression was chosen due to the likelihood of multicollinearity between weather 
+                features such as humidity, pressure, and temperature.
+            </p>
+
+            <p style="margin-top: 10px;">
+                Key steps in the modelling process:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>
+                    <strong>Feature Selection:</strong> 
+                    Input features included humidity, pressure, wind speed, wind direction, and other 
+                    meteorological readings. Date-related columns were transformed and indexed primarily 
+                    for ordering rather than direct input.
+                </li>
+                <li>
+                    <strong>Cross-Validation:</strong> 
+                    I used <strong>Repeated K-Fold Cross-Validation</strong> (10 splits, repeated 5 times, fixed random state) 
+                    to obtain a more stable estimate of model performance and a robust λ selection.
+                </li>
+                <li>
+                    <strong>Training:</strong> 
+                    The cleaned dataset was split into training and test sets, and the Ridge model was fitted on 
+                    the training data, with evaluation performed on the held-out test set.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Evaluation & Results -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Evaluation & Results</h2>
+            <p>
+                The model was evaluated using error-based metrics, particularly:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li><strong>Mean Absolute Error (MAE)</strong></li>
+                <li><strong>Mean Squared Error (MSE)</strong></li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                The final Ridge model achieved an MAE of approximately <strong>3.98°C</strong>, meaning that on average 
+                the temperature predictions were within about 4 degrees of the actual values. While not 
+                perfect, this represents a reasonably accurate baseline given the complexity and variability 
+                of weather.
+            </p>
+
+            <p style="margin-top: 10px;">
+                I also generated:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>A scatter plot comparing predicted vs actual temperatures.</li>
+                <li>Residual plots to visualise where the model performed well and where errors were larger.</li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                These visualisations showed a dense cluster of correctly predicted values around the ideal 
+                line, with some spread indicating outliers and the inherent difficulty of capturing all patterns 
+                in a simple linear model.
+            </p>
+        </section>
+
+        <!-- Future Predictions -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Future Predictions</h2>
+            <p>
+                One of the main goals of the project was not only to fit a model to historical data, but to use 
+                it to generate predictions <strong>30 days into the future</strong>.
+            </p>
+
+            <p style="margin-top: 10px;">
+                To do this:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>I extended the dataset by creating 744 new hourly rows (30 days × 24 hours + remaining hours).</li>
+                <li>For each new timestamp, I filled non-target features using historical averages for matching dates across years.</li>
+                <li>The trained Ridge model was then used to predict future temperatures for these new rows.</li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                Finally, I plotted these predictions to visualise how the model expects temperature to evolve 
+                beyond the end of the original dataset, giving a continuous forecast window.
+            </p>
+        </section>
+
+        <!-- Reflections & Future Work -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Reflections & Future Work</h2>
+            <p>
+                Although the system is functional and capable of producing reasonable short-term forecasts, 
+                there is still room for improvement.
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>Experimenting with alternative models such as Lasso, Elastic Net, or tree-based methods.</li>
+                <li>Exploring time-series-specific models like ARIMA or more advanced deep learning architectures.</li>
+                <li>Incorporating additional years or external weather sources to enrich the dataset.</li>
+                <li>Using metrics such as RMSE or Median Absolute Error for more nuanced evaluation.</li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                This project gave me hands-on experience working with large datasets, cleaning and 
+                transforming time series, applying regularised regression, and critically evaluating model 
+                performance in a realistic forecasting context.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer_inner">
+                <a href="https://www.linkedin.com/in/georgemcdonald" class="footer_icon" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            <a href="https://www.github.com/georgemcdonald" class="footer_icon" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="footer_text">&copy; <span id="year"></span> George McDonald</p>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

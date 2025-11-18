@@ -1,152 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>George McDonald</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George McDonald | Portfolio</title>
 
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="htts://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
-        <script src="script.js" defer></script>
-        <style>
-            body, h1, h2, h3, p {font-family: 'Montserrat', sans-serif;}
-            /*Set the widsth of the sidebar*/
-            .sidebar {width: 120px; background: #222;}
-            /*Set the left margin of the page content to the width of the sidebar*/
-            .main_content {margin-left: 120px;}
-            /* responsive layout - when the screen is less than 700px wide, make the sidebar into a topbar */
-            @media only screen and (max-width: 600px) {#main {margin-left: 0;}}
-        </style>
-    </head>
-    <body class="portfolio_body">
-        <!-- Sidebar Navigation -->
-        <nav class="sidebar barblock small hide_small centered">
-            <img src="profile.jpg" style="width: 100%;">
-            <a href="#" class="bar_item button padding_large hover_black">
-                <i class="fa fa-home"></i> 
-                <p>HOME</p>
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Optional script file if you need it -->
+    <script src="script.js" defer></script>
+</head>
+<body class="portfolio_body">
+    <!-- Sidebar Navigation (desktop) -->
+    <nav class="sidebar barblock hide_small">
+        <div class="sidebar_inner">
+            <img src="/images/profile.jpg" alt="Profile picture of George McDonald" class="sidebar_profile">
+            <a href="#home" class="bar_item button hover_black">
+                <i class="fa fa-home"></i>
+                <span>Home</span>
             </a>
-            <a href="#about" class="bar_item button padding_large hover_black">
-                <i class="fa fa-user"></i> 
-                <p>ABOUT</p>
+            <a href="#about" class="bar_item button hover_black">
+                <i class="fa fa-user"></i>
+                <span>About</span>
             </a>
-            <a href="#projects" class="bar_item button padding_large hover_black">
-                <i class="fa fa-projects"></i> 
-                <p>PROJECTS</p>
+            <a href="#projects" class="bar_item button hover_black">
+                <i class="fa fa-briefcase"></i>
+                <span>Projects</span>
             </a>
-            <a href="#contact" class="bar_item button padding_large hover_black">
-                <i class="fa fa-envelope"></i> 
-                <p>CONTACT</p>
+            <a href="#contact" class="bar_item button hover_black">
+                <i class="fa fa-envelope"></i>
+                <span>Contact</span>
             </a>
-        </nav>
-        <!-- Navbar on smaller Screen-->
-        <div class="topnav hide_large hide_medium" id="myTopnav">
-            <div class="topnav-centered black opacity hover_opacity_off centered small">
-                ::before
-                <a href="#"class="bar_item button">HOME</a>
-                <a href="#about" class="bar_item button">ABOUT</a>
-                <a href="#projects" class="bar_item button">PROJECTS</a>
-                <a href="#contact" class="bar_item button">CONTACT</a>
-                ::after
-            </div>
         </div>
-        <!-- Main Content -->
-        <div class="padding_large" id="main">
-            <!-- Home Section -->
-            <header class="container padding_32 centered black" id="home">
-                ::before
-                <h1 class="Large_title">
-                    <span class="hide_small"> I'm </span>
-                    George McDonald.
-                </h1>
-                <p>Developer, Data Scientist.</p>
-                <img src="profile.jpg" class="profile_image" width="992" height="1108">
-                ::after
-            </header>
+    </nav>
+
+    <!-- Top Navbar (mobile) -->
+    <div class="topnav hide_large hide_medium" id="myTopnav">
+        <div class="topnav_inner">
+            <a href="#home" class="topnav_link">Home</a>
+            <a href="#about" class="topnav_link">About</a>
+            <a href="#projects" class="topnav_link">Projects</a>
+            <a href="#contact" class="topnav_link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main" class="main_content">
+        <!-- Home Section -->
+        <header class="hero_section" id="home">
+            <div class="hero_text">
+                <p class="hero_intro">Hi, I'm</p>
+                <h1 class="Large_title">George McDonald.</h1>
+                <p class="hero_subtitle">Developer &amp; Data Scientist.</p>
+                <p class="hero_tagline">
+                    I build intelligent systems, battle simulations, and data-driven solutions using
+                    C#, Python, machine learning, and modern web technologies.
+                </p>
+                <div class="hero_buttons">
+                    <a href="#projects" class="primary_button">View My Projects</a>
+                    <a href="#contact" class="secondary_button">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero_image_wrapper">
+                <img src="profile.jpg" class="profile_image" alt="Portrait of George McDonald">
+            </div>
+        </header>
+
         <!-- About Section -->
-        <div class="content justify text_grey padding_64" id="about">
-            <h2 class="text_light_grey">About Me</h2>
-            <p>Hello! I'm George McDonald, a passionate developer and data scientist with a knack for creating innovative solutions. With experience in various programming languages and data analysis tools, I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
-            <h3 class="padding_16 text_light_grey">My Skills</h3>
-            <p class="spaced_letters">Python</p>
-            <p class="spaced_letters">JavaScript</p>
-            <p class="spaced_letters">Data Analysis</p>
-            <p class="spaced_letters">Machine Learning</p>
-            <p class="spaced_letters">Web Development</p>
-        <br>
-        <button class="download_cv_button">
-            <a href="George_McDonald_CV.pdf" download>Download CV</a>
-        </button>
-        <!-- End About Section -->
-        </div>
+        <section class="content section" id="about">
+            <h2 class="section_title text_light_grey">About Me</h2>
+            <p>
+                Hello! I'm George McDonald, a passionate developer and data scientist with a knack for creating
+                innovative solutions. With experience in a range of programming languages, machine learning
+                techniques, and data analysis tools, I enjoy turning complex problems into clear, practical,
+                and visually intuitive systems.
+            </p>
+
+            <h3 class="subsection_title text_light_grey">My Skills</h3>
+            <div class="skills_grid">
+                <span class="skill_chip">Python</span>
+                <span class="skill_chip">C# &amp; Unity</span>
+                <span class="skill_chip">JavaScript</span>
+                <span class="skill_chip">Data Analysis</span>
+                <span class="skill_chip">Machine Learning</span>
+                <span class="skill_chip">Reinforcement Learning</span>
+                <span class="skill_chip">Web Development</span>
+            </div>
+
+            <a href="George_McDonald_CV.pdf" download class="download_cv_button">
+                <i class="fa fa-download"></i>
+                <span>Download CV</span>
+            </a>
+        </section>
+
         <!-- Projects Section -->
-        <div class="content padding_64" id="projects">
-            <h2 class="text_light_grey">Projects</h2>
-            <div class="project_item">
-                <h3 class="spaced_letters">The Monsters Learn To Fight Back</h3>
-                <h4 class="project_skills">Skills: C#, Unity, Reinforcement Learning</h4>
-                <p class="project_description">A Unity based battle simulation using C# and a custom built reinforcement learning (RL) algorithm that simulates the Dungeon and Dragons 
-                    battle experience, where the monsters act based off of previously learnt strategies.</p>
-            </div>
-            <div class="project_item">
-                <h3 class="spaced_letters">Credit Card Fraud Detection</h3>
-                <h4 class="project_skills">Skills: Python, Pandas, Scikit-Learn, TensorFlow, Machine Learning</h4>
-                <p class="project_description">A data mining exercise using a big data Kaggle dataset of transactions. Where I built and compared multiple ML models (Logeistic Reasoning, Random Forest, Neural Networks)
-                    to find the most effective model for detecting fraudulent transactions. Using techniques such as feature engineering and model optimization to achieve high accuracy across models.</p>
+        <section class="content section" id="projects">
+            <h2 class="section_title text_light_grey">Projects</h2>
+
+            <article class="project_item">
+                <h3 class="project_title spaced_letters">The Monsters Learn To Fight Back</h3>
+                <p class="project_skills">Skills: C#, Unity, Reinforcement Learning (RL), Simulation</p>
+                <p class="project_description">
+                    A Unity-based battle simulation using C# and a custom reinforcement learning setup that
+                    simulates the Dungeons &amp; Dragons combat experience. Monsters learn strategies over time
+                    and adapt their behaviour based on previously learned tactics.
                 </p>
-            </div>
-            <div class="project_item">
-                <h3 class="spaced_letters">RBG vs. CMYK Image Classification</h3>
-                <h4 class="project_skills">Skills: Python, TensorFlow, Keras, Convolutional Neural Networks</h4>
-                <p class="project_description">Designed and trained a Convolutional Neural Network (CNN) to classify over 140 categories. Developed a modular pipeline to convert images from RGB to CMYK, training,
-                    testing and evaluating the CNN model using TensorFlow and Keras libraries in Python. Implemented custom evaluation metrics including confusion matrix and classification reports.</p>
+                <br>
+                <a href="Projects/TheMonstersLearnToFightBack.html">
+                <span class="skill_chip">Learn more</span>
+                </a> 
+                <!-- Later: add GitHub link / demo -->
+                <!-- <a href="#" class="project_link">View on GitHub</a> -->
+            </article>
+
+            <article class="project_item">
+                <h3 class="project_title spaced_letters">Credit Card Fraud Detection</h3>
+                <p class="project_skills">Skills: Python, Pandas, Scikit-Learn, TensorFlow, Machine Learning</p>
+                <p class="project_description">
+                    A data mining project using a large Kaggle transaction dataset. I built and compared multiple
+                    ML models (Logistic Regression, Random Forest, Neural Networks) to find the most effective
+                    method for detecting fraudulent transactions, using techniques such as feature engineering,
+                    resampling, and model optimization to achieve strong performance.
                 </p>
-            </div>
-            <div class="project item">
-                <h3 class="spaced_letters">Weather Prediction System</h3>
-                <h4 class="project_skills">Skills: Python, Pandas, Scikit-Learn, ARIMA, Ridge Regression</h4>
-                <p class="project_description">Developed an AI pipeline to forecast weather trends using large-scale kaggle dataset, including data cleaning and feature engineering to merge and process multi-year weather data.
-                    Built and tested predictive models including ARIMA and Ridge Regression with cross-validation to optimize hyperparameters and improve accuracy. Extended the datasets with future timestamps and predictors for 30
-                day-ahead forecasing. Conducted exploratory data analysis and visualization of seasonal patterns and prediction accuracy.</p>
+                <br>
+                <a href="Projects/CreditCardFraudDetection.html">
+                <span class="skill_chip">Learn more</span>
+                </a> 
+            </article>
+
+            <article class="project_item">
+                <h3 class="project_title spaced_letters">RGB vs CMYK Image Classification</h3>
+                <p class="project_skills">Skills: Python, TensorFlow, Keras, Convolutional Neural Networks</p>
+                <p class="project_description">
+                    Designed and trained a Convolutional Neural Network (CNN) to classify images into over
+                    140 categories. Built a modular pipeline to convert images from RGB to CMYK, trained and
+                    evaluated the CNN using TensorFlow and Keras, and implemented custom evaluation metrics
+                    including confusion matrices and detailed classification reports.
                 </p>
-            </div>
-        <!-- End Projects Section -->
-        </div>
+                <br>
+                <a href="Projects/RGBvsCMYK.html">
+                <span class="skill_chip">Learn more</span>
+                </a> 
+            </article>
+
+            <article class="project_item">
+                <h3 class="project_title spaced_letters">Weather Prediction System</h3>
+                <p class="project_skills">Skills: Python, Pandas, Scikit-Learn, ARIMA, Ridge Regression</p>
+                <p class="project_description">
+                    Developed an AI pipeline to forecast weather trends using a large-scale Kaggle dataset.
+                    This included data cleaning, feature engineering on multi-year weather data, and building
+                    predictive models (ARIMA and Ridge Regression) with cross-validation. I extended the dataset
+                    with future timestamps to enable 30-day-ahead forecasting and performed exploratory data
+                    analysis to understand seasonal patterns and model accuracy.
+                </p>
+                <br>
+                <a href="Projects/WeatherPredictionSystem.html">
+                <span class="skill_chip">Learn more</span>
+                </a> 
+            </article>
+        </section>
+
         <!-- Contact Section -->
-        <div class="content padding_64 text_grey" id="contact">
-            <h2 class="text_light_grey">Contact Me</h2>
+        <section class="content section" id="contact">
+            <h2 class="section_title text_light_grey">Contact Me</h2>
+
             <div class="contact_item">
                 <p>
-                <i class="fa fa-envelope contact_icon"></i>
-                "Email: GeorgeMcDonald1998@gmail.com"
-                </p>
-                <p>
-                <i class="fa fa-phone contact_icon"></i>
-                "Phone: +44 7557 383245"
+                    <i class="fa fa-envelope contact_icon" aria-hidden="true"></i>
+                    <a href="mailto:GeorgeMcDonald1998@gmail.com">GeorgeMcDonald1998@gmail.com</a>
                 </p>
             </div>
-            <br>
-            <p>Let's get in touch. Send me a message:</p>
+
+            <p class="contact_intro">Let's get in touch. Send me a message:</p>
+
             <form class="contact_form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit" class="submit_button">Send Message</button>
             </form>
-        <!-- End Contact Section -->
-        </div>
+        </section>
+
         <!-- Footer -->
         <footer class="footer">
-            <i class="fa fa-linkedin footer_icon">
-                ::before
-                <a href="https://www.linkedin.com/in/georgemcdonald" target="_blank"></a>
-            </i>
-            <i class="fa fa-github footer_icon">
-                ::before
-                <a href="https://www.github.com/georgemcdonald" target="_blank"></a>
-            </i>
-        <!-- End Footer -->
+            <div class="footer_inner">
+                <a href="https://www.linkedin.com/in/georgemcdonald" target="_blank" rel="noopener" class="footer_icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.github.com/georgemcdonald" target="_blank" rel="noopener" class="footer_icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="footer_text">&copy; <span id="year"></span> George McDonald. All rights reserved.</p>
         </footer>
-    </body>
+    </main>
+
+    <script>
+        // Simple script to keep the footer year updated
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
 </html>

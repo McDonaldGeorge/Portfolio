@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection | Project</title>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Main site CSS (go up one directory) -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="portfolio_body">
+
+    <!-- Sidebar (desktop) -->
+    <nav class="sidebar barblock hide_small">
+        <div class="sidebar_inner">
+            <img src="../images/profile.jpg" alt="George McDonald" class="sidebar_profile">
+            <a href="../index.html#home" class="bar_item button hover_black"><i class="fa fa-home"></i><span>Home</span></a>
+            <a href="../index.html#about" class="bar_item button hover_black"><i class="fa fa-user"></i><span>About</span></a>
+            <a href="../index.html#projects" class="bar_item button hover_black"><i class="fa fa-briefcase"></i><span>Projects</span></a>
+            <a href="../index.html#contact" class="bar_item button hover_black"><i class="fa fa-envelope"></i><span>Contact</span></a>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="topnav hide_large hide_medium" id="myTopnav">
+        <div class="topnav_inner">
+            <a href="../index.html#home" class="topnav_link">Home</a>
+            <a href="../index.html#about" class="topnav_link">About</a>
+            <a href="../index.html#projects" class="topnav_link">Projects</a>
+            <a href="../index.html#contact" class="topnav_link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main" class="main_content">
+
+        <!-- Title Section -->
+        <header class="section" style="padding-top: 40px;">
+            <h1 class="Large_title">Credit Card Fraud Detection</h1>
+            <p class="hero_subtitle">Python • Data Mining • Imbalanced Classification • SVM</p>
+            <p class="project_date">Completed: 23rd May 2025</p>
+            <a href="../index.html#projects" class="secondary_button" style="margin-top: 12px;">
+                ← Back to Projects
+            </a>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Project Overview</h2>
+            <p>
+                This project investigates the use of data mining techniques to detect fraudulent credit card 
+                transactions using a real-world dataset of European card activity. Working with over 
+                280,000 transactions—of which less than 0.2% are fraudulent—it focuses on handling 
+                extreme class imbalance while maintaining practical performance.
+            </p>
+            <p style="margin-top: 10px;">
+                I implemented and compared four different approaches: a statistical Z-Score method, an 
+                unsupervised Isolation Forest, a probabilistic Naïve Bayes classifier, and a Support Vector 
+                Machine (SVM). Each model was evaluated using metrics suited to imbalanced data, such 
+                as precision, recall, F1-score, ROC AUC, and average precision.
+            </p>
+            <p style="margin-top: 10px;">
+                The project is a <strong>completed</strong> piece of work, originally developed as part of my 
+                Data Mining module. The final analysis concludes that an SVM with an RBF kernel offers 
+                the best balance between fraud detection and false positive control, making it the most 
+                suitable of the tested models for real-world deployment.
+            </p>
+
+            <div class="skills_grid" style="margin-top: 20px;">
+                <span class="skill_chip">Python</span>
+                <span class="skill_chip">Jupyter Notebook</span>
+                <span class="skill_chip">Pandas</span>
+                <span class="skill_chip">Scikit-Learn</span>
+                <span class="skill_chip">Data Mining</span>
+                <span class="skill_chip">Imbalanced Data</span>
+                <span class="skill_chip">Support Vector Machine</span>
+                <span class="skill_chip">Isolation Forest</span>
+                <span class="skill_chip">Naïve Bayes</span>
+            </div>
+
+            <div style="margin-top: 16px; display:flex; flex-wrap:wrap; gap:10px;">
+                <a href="../Credit%20Card%20Fraud%20Detection.pdf" class="download_cv_button" target="_blank" rel="noopener">
+                    <i class="fa fa-file-pdf"></i>
+                    <span>View Technical Report (PDF)</span>
+                </a>
+                <!-- Optional GitHub link if you have one -->
+                <!--
+                <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" class="secondary_button" target="_blank" rel="noopener">
+                    View Code on GitHub
+                </a>
+                -->
+            </div>
+        </section>
+
+        <!-- Dataset Section -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Dataset</h2>
+            <p>
+                The project uses the well-known <em>Credit Card Fraud Detection</em> dataset from Kaggle, 
+                containing anonymised transactions by European cardholders in September 2013.
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li><strong>Total transactions:</strong> 284,807</li>
+                <li><strong>Fraudulent transactions:</strong> 492 (~0.17%)</li>
+                <li><strong>Features:</strong> 30 numerical features (Time, Amount, and PCA-transformed components V1–V28)</li>
+                <li><strong>Label:</strong> Binary fraud flag (0 = legitimate, 1 = fraud)</li>
+            </ul>
+            <p style="margin-top: 10px;">
+                All features are purely numerical, which made the dataset ideal for a range of traditional 
+                machine learning methods. Time and Amount were scaled using standardization, and the 
+                original distributions were preserved without oversampling or synthetic data generation. 
+                Instead, model performance was assessed using metrics tailored for severe class imbalance.
+            </p>
+        </section>
+
+        <!-- Methods & Models -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Methods & Models</h2>
+            <p>
+                I implemented four different techniques to explore a spectrum of approaches—from simple 
+                statistical methods to more advanced supervised classifiers:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>
+                    <strong>Z-Score Anomaly Detection:</strong>  
+                    A statistical baseline that flags points far from the mean in standard deviation terms. 
+                    Simple and interpretable, but struggles with high-dimensional and highly skewed data.
+                </li>
+                <li>
+                    <strong>Isolation Forest:</strong>  
+                    An unsupervised anomaly detection algorithm that isolates outliers via random partitioning. 
+                    Efficient and scalable, particularly suited for high-dimensional data.
+                </li>
+                <li>
+                    <strong>Naïve Bayes (Gaussian):</strong>  
+                    A probabilistic classifier that assumes conditional independence between features. 
+                    It performed well in identifying fraud (high recall), but generated many false positives.
+                </li>
+                <li>
+                    <strong>Support Vector Machine (RBF Kernel):</strong>  
+                    A supervised classifier that seeks an optimal separating hyperplane in a transformed feature 
+                    space. With class weighting to address imbalance, it provided the best overall trade-off 
+                    between precision and recall.
+                </li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                All models were implemented in Python using scikit-learn, following a consistent pipeline: 
+                preprocessing, training on a stratified split, prediction, and evaluation using a set of 
+                imbalanced classification metrics.
+            </p>
+        </section>
+
+        <!-- Results -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Results</h2>
+            <p>
+                The models were evaluated using precision, recall, F1-score, ROC AUC, and average precision (AP). 
+                These metrics were chosen specifically to reflect performance in the presence of significant class 
+                imbalance.
+            </p>
+
+            <p style="margin-top: 10px;">
+                At a high level:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>
+                    <strong>Z-Score:</strong> Very high recall but extremely low precision, flagging almost everything as fraud. 
+                    Useful as a loose anomaly filter, but impractical in isolation.
+                </li>
+                <li>
+                    <strong>Isolation Forest:</strong> Achieved a more balanced performance, detecting some fraud with fewer false positives, 
+                    but still not accurate enough for primary, real-time deployment.
+                </li>
+                <li>
+                    <strong>Naïve Bayes:</strong> Delivered strong recall (caught most fraud cases), but at the cost of many false alarms, 
+                    making it more suited for secondary review layers.
+                </li>
+                <li>
+                    <strong>Support Vector Machine:</strong> Provided the best overall balance, with high precision and the highest F1-score, 
+                    as well as strong ROC AUC and average precision. This makes it the most suitable of the tested 
+                    models for integration into a real-world fraud detection pipeline.
+                </li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                In addition to numerical metrics, I generated confusion matrices, ROC curves, and 
+                precision–recall plots to visualise how each model behaved across thresholds and class 
+                distributions. These confirmed SVM as the most reliable choice under practical constraints.
+            </p>
+        </section>
+
+        <!-- Real-World Relevance -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Real-World Relevance</h2>
+            <p>
+                Credit card fraud detection is a critical component of modern financial infrastructure. 
+                Systems must detect fraud quickly and accurately without overwhelming teams with 
+                false positives or disrupting legitimate customer activity.
+            </p>
+            <p style="margin-top: 10px;">
+                The work in this project demonstrates how different classes of models—statistical, 
+                unsupervised, and supervised—behave on a realistic, heavily imbalanced dataset. In 
+                particular, it shows how:
+            </p>
+
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.7;">
+                <li>Baseline statistical methods can serve as simple anomaly filters.</li>
+                <li>Unsupervised models like Isolation Forest are valuable when labels are limited.</li>
+                <li>Naïve Bayes is well-suited for high-recall use cases where false positives are acceptable.</li>
+                <li>SVMs can form the core of a practical fraud detection system where both precision and recall matter.</li>
+            </ul>
+
+            <p style="margin-top: 10px;">
+                This project gave me hands-on experience working with imbalanced classification, 
+                real-world datasets, and the trade-offs involved in designing models for high-stakes 
+                decision-making systems.
+            </p>
+        </section>
+
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Media & Screenshots</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:20px;">
+                <div style="width:100%; max-width:450px; background:#111; border:1px solid #222; height:250px; display:flex; align-items:center; justify-content:center; color:#555;">
+                    <img src="../images/Pages/CreditCard/PRcomp.png" alt="Precision-Recall Curve Comparison" style="max-width:100%; max-height:100%;">
+                </div>
+                <div style="width:100%; max-width:450px; background:#111; border:1px solid #222; height:250px; display:flex; align-items:center; justify-content:center; color:#555;">
+                    <img src="../images/Pages/CreditCard/ROCcomp.png" alt="ROC Curve Comparison" style="max-width:100%; max-height:100%;">
+                </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer_inner">
+                <a href="https://www.linkedin.com/in/georgemcdonald" class="footer_icon" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.github.com/georgemcdonald" class="footer_icon" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="footer_text">&copy; <span id="year"></span> George McDonald</p>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

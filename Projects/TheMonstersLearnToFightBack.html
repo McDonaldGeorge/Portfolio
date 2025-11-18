@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Monsters Learn To Fight Back | Project</title>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Main site CSS (go up one directory) -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="portfolio_body">
+
+    <!-- Sidebar (desktop) -->
+    <nav class="sidebar barblock hide_small">
+        <div class="sidebar_inner">
+            <img src="../images/profile.jpg" alt="George McDonald" class="sidebar_profile">
+            <a href="../index.html#home" class="bar_item button hover_black"><i class="fa fa-home"></i><span>Home</span></a>
+            <a href="../index.html#about" class="bar_item button hover_black"><i class="fa fa-user"></i><span>About</span></a>
+            <a href="../index.html#projects" class="bar_item button hover_black"><i class="fa fa-briefcase"></i><span>Projects</span></a>
+            <a href="../index.html#contact" class="bar_item button hover_black"><i class="fa fa-envelope"></i><span>Contact</span></a>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="topnav hide_large hide_medium" id="myTopnav">
+        <div class="topnav_inner">
+            <a href="../index.html#home" class="topnav_link">Home</a>
+            <a href="../index.html#about" class="topnav_link">About</a>
+            <a href="../index.html#projects" class="topnav_link">Projects</a>
+            <a href="../index.html#contact" class="topnav_link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main" class="main_content">
+
+        <!-- Title Section -->
+        <header class="section" style="padding-top: 40px;">
+            <h1 class="Large_title">The Monsters Learn To Fight Back</h1>
+            <p class="hero_subtitle">Unity • C# • Reinforcement Learning • Simulation</p>   
+            <p class="project_date">Ongoing Project</p>
+            <a href="../index.html#projects" class="secondary_button" style="margin-top: 12px;">
+                ← Back to Projects
+            </a>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Project Overview</h2>
+            <p>
+                <strong>The Monsters Learn To Fight Back</strong> is a Unity-based combat simulation where monsters 
+                learn to fight using reinforcement learning. Built using C#, custom movement logic, 
+                and training systems inspired by Dungeons & Dragons combat rules, this project 
+                demonstrates adaptive AI behaviour, environment design, and machine learning integration.
+            </p>
+            <br>
+            <p>
+                Initially developed during my final year at university in 2024, this project demonstrated early success in applying AI to 
+                turn-based monster behaviour, but also revealed key challenges and areas for improvement. The work is ongoing, 
+                with future updates planned to incorporate NEAT-driven evolutionary learning, refined strategy evaluation, 
+                and multi-agent coordination to create richer, more adaptive combat scenarios.
+            </p>
+
+            <a href="The Monsters Learn To Fight Back.pdf" download class="download_cv_button">
+                <i class="fa fa-download"></i>
+                <span>Download Original Report</span>
+            </a>
+
+            <div class="skills_grid" style="margin-top: 20px;">
+                <span class="skill_chip">Unity</span>
+                <span class="skill_chip">C#</span>
+                <span class="skill_chip">Game Development</span>
+                <span class="skill_chip">Python</span>
+                <span class="skill_chip">Reinforcement Learning (PPO)</span>
+                <span class="skill_chip">Grid-Based Simulation</span>
+            </div>
+        </section>
+
+        <!-- Problem -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">The Problem</h2>
+            <p>
+                Since its debut in 1974, Dungeons & Dragons (D&D) has remained a cornerstone of strategic, 
+                turn-based combat and collaborative storytelling. However, as encounters grow larger and more complex, 
+                the cognitive load placed on Dungeon Masters (DMs) increases significantly. Coordinating multiple monsters, 
+                their tactics, and optimal decision-making can slow down gameplay and disrupt the narrative flow.
+            </p>
+            <br>
+            <p>
+                <strong>The Monsters Learn to Fight Back</strong> explores how artificial intelligence can enhance monster behaviour by allowing 
+                enemies to develop their own strategies through adaptive algorithms. By integrating learning-based AI—such as 
+                evolutionary methods and reinforcement learning techniques—this project aims to create monsters that act more 
+                intelligently and dynamically in combat. The ultimate goal is to reduce DM workload while producing more engaging, 
+                reactive, and believable encounters for players.
+            </p>
+        </section>
+
+        <!-- Media Section -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Media & Screenshots</h2>
+
+            <!-- Example placeholder images -->
+            <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:20px;">
+                <div style="width:100%; max-width:450px; background:#111; border:1px solid #222; height:250px; display:flex; align-items:center; justify-content:center; color:#555;">
+                    Image Placeholder
+                </div>
+                <div style="width:100%; max-width:450px; background:#111; border:1px solid #222; height:250px; display:flex; align-items:center; justify-content:center; color:#555;">
+                    Training GIF Placeholder
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">My Approach</h2>
+            <ul style="margin-left:20px; line-height:1.7;">
+                <li>Designed a grid-based combat environment in Unity</li>
+                <li>Implemented movement, adjacency rules, and attack mechanics in C#</li>
+                <li>Created an environment API flexible enough to support:
+                    <ul style="margin-left:15px;">
+                        <li>Unity ML-Agents (PPO)</li>
+                        <li>Custom NEAT implementation (in-progress)</li>
+                    </ul>
+                </li>
+                <li>Structured training episodes with incremental reward shaping</li>
+                <li>Logged behaviour and performance across training iterations</li>
+            </ul>
+        </section>
+
+        <!-- Results -->
+        <section class="section content">
+            <h2 class="section_title text_light_grey">Results</h2>
+            <p>
+                The AI learns to:
+            </p>
+
+            <ul style="margin-left:20px; line-height:1.7;">
+                <li>Move intelligently toward the player</li>
+                <li>Stop in optimal attack range</li>
+                <li>Attack without human intervention</li>
+                <li>Evaluate success/failure based on environment events</li>
+                <li>Evolve strategies over time</li>
+            </ul>
+
+            <p style="margin-top:10px;">
+                Future updates will include NEAT-based evolutionary learning, multi-agent coordination, and 
+                more advanced DnD-style tactical behaviour.
+            </p>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer_inner">
+                <a href="https://www.linkedin.com/in/georgemcdonald" class="footer_icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.github.com/georgemcdonald" class="footer_icon"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="footer_text">&copy; <span id="year"></span> George McDonald</p>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
