@@ -21,7 +21,7 @@
     <!-- Sidebar Navigation (desktop) -->
     <nav class="sidebar barblock hide_small">
         <div class="sidebar_inner">
-            <img src="/images/profile.jpg" alt="Profile picture of George McDonald" class="sidebar_profile">
+            <img src="images/profile.jpg" alt="Profile picture of George McDonald" class="sidebar_profile">
             <a href="#home" class="bar_item button hover_black">
                 <i class="fa fa-home"></i>
                 <span>Home</span>
@@ -68,8 +68,8 @@
                     <a href="#contact" class="secondary_button">Get In Touch</a>
                 </div>
             </div>
-            <div class="hero_image_wrapper">
-                <img src="profile.jpg" class="profile_image" alt="Portrait of George McDonald">
+            <div class="hero_image_wrapper hide_large">
+                <img src="images/profile.jpg" class="profile_image" alt="Portrait of George McDonald">
             </div>
         </header>
 
@@ -167,6 +167,27 @@
             </article>
         </section>
 
+        <!-- Certifications Section -->
+        <section class="content section" id="certifications">
+            <h2 class="section_title text_light_grey">Certifications</h2>
+            <ul class="certification_list">
+                <li class="certification_item">
+                    <i class="fa fa-certificate certification_icon" aria-hidden="true"></i>
+                    <span class="certification_name">Computer Science with Artificial Intelligence</span>
+                    <span class="certification_date">Completed: July 2025</span>
+                </li>
+                <li class="certification_item">
+                    <i class="fa fa-certificate certification_icon" aria-hidden="true"></i>
+                    <span class="certification_name">Deep Learning Specialization by deeplearning.ai (Coursera)</span>
+                    <span class="certification_date">Completed: December 2023</span>
+                </li>
+                <li class="certification_item">
+                    <i class="fa fa-certificate certification_icon" aria-hidden="true"></i>
+                    <span class="certification_name">Unity Certified Programmer (Unity Technologies)</span>
+                    <span class="certification_date">Completed: March 2024</span>
+                </li>
+            </ul>
+
         <!-- Contact Section -->
         <section class="content section" id="contact">
             <h2 class="section_title text_light_grey">Contact Me</h2>
@@ -189,17 +210,8 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
-            <div class="footer_inner">
-                <a href="https://www.linkedin.com/in/georgemcdonald" target="_blank" rel="noopener" class="footer_icon" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.github.com/georgemcdonald" target="_blank" rel="noopener" class="footer_icon" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <p class="footer_text">&copy; <span id="year"></span> George McDonald. All rights reserved.</p>
-        </footer>
+        <div id="footer"></div>
+        <script src="/JavaScripts/Footer.js"></script>
     </main>
 
     <script>
