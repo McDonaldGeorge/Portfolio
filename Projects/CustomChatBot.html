@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Chatbot | Project</title>
+
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="../CSS/styles.css">
+
+  <!-- (Optional) Light security meta—safe for static hosting -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com;">
+</head>
+
+<body class="portfolio_body">
+  <!-- Sidebar (desktop) -->
+  <nav class="sidebar barblock hide_small">
+    <div class="sidebar_inner">
+      <img src="../profile.jpg" alt="George McDonald" class="sidebar_profile">
+      <a href="../index.html#home" class="bar_item button hover_black"><i class="fa fa-home"></i><span>Home</span></a>
+      <a href="../index.html#about" class="bar_item button hover_black"><i class="fa fa-user"></i><span>About</span></a>
+      <a href="../index.html#projects" class="bar_item button hover_black"><i class="fa fa-briefcase"></i><span>Projects</span></a>
+      <a href="../index.html#contact" class="bar_item button hover_black"><i class="fa fa-envelope"></i><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="topnav hide_large hide_medium" id="myTopnav">
+    <div class="topnav_inner">
+      <a href="../index.html#home" class="topnav_link">Home</a>
+      <a href="../index.html#about" class="topnav_link">About</a>
+      <a href="../index.html#projects" class="topnav_link">Projects</a>
+      <a href="../index.html#contact" class="topnav_link">Contact</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main" class="main_content">
+    <!-- Title -->
+    <header class="section" style="padding-top: 40px;">
+      <h1 class="Large_title">Custom Chatbot</h1>
+      <p class="hero_subtitle">Python • NLP • Transformers • Flask/FastAPI • Front-End Integration</p>
+      <p class="project_date">Status: Ongoing — Last updated: <span id="updated-date"></span></p>
+
+      <a href="../index.html#projects" class="secondary_button" style="margin-top: 12px;">← Back to Projects</a>
+    </header>
+
+    <!-- Overview -->
+    <section class="section content">
+      <h2 class="section_title text_light_grey">Project Overview</h2>
+      <p>
+        <em>Custom Chatbot</em> is an end-to-end conversational AI project designed for a tailored domain
+        and tone. The system combines a pre-trained transformer backbone with fine-tuned dialogue data,
+        a lightweight API (Flask/FastAPI), and a web chat interface. The aim is to demonstrate practical
+        conversational AI engineering: dataset preparation, model integration, prompt control, and deployment.
+      </p>
+      <div class="skills_grid" style="margin-top: 20px;">
+        <span class="skill_chip">Python</span>
+        <span class="skill_chip">NLP</span>
+        <span class="skill_chip">Transformers</span>
+        <span class="skill_chip">Fine-Tuning</span>
+        <span class="skill_chip">Flask/FastAPI</span>
+        <span class="skill_chip">Vector Store (RAG)</span>
+        <span class="skill_chip">HTML/CSS/JS</span>
+      </div>
+      <div style="margin-top: 16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <!-- Add links when ready -->
+        <!-- <a href="https://github.com/yourname/custom-chatbot" class="secondary_button" target="_blank" rel="noopener">GitHub</a> -->
+        <!-- <a href="https://your-demo-url" class="primary_button" target="_blank" rel="noopener">Live Demo</a> -->
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section content">
+      <h2 class="section_title text_light_grey">Architecture</h2>
+      <ul style="margin-left:20px; line-height:1.7;">
+        <li><strong>Frontend:</strong> Minimal HTML/CSS/JS chat interface with message history.</li>
+        <li><strong>Backend API:</strong> Flask or FastAPI endpoint (<code>POST /chat</code>) that receives user input and returns model responses.</li>
+        <li><strong>Model Layer:</strong> Pre-trained transformer; optional fine-tuning for tone/domain.</li>
+        <li><strong>Memory:</strong> Session context; optional vector database for retrieval-augmented generation (RAG).</li>
+        <li><strong>Deployment:</strong> Static frontend (GitHub Pages) + API on a serverless/cloud host.</li>
+      </ul>
+    </section>
+
+    <!-- Demo (frontend only; mock replies for now) -->
+    <section class="section content">
+      <h2 class="section_title text_light_grey">Interactive Demo (Prototype)</h2>
+      <p class="text_grey" style="margin-bottom:10px;">
+        This prototype runs entirely in the browser and simulates responses. Wire it to your backend later by
+        replacing the mock function with a <code>fetch()</code> to your API.
+      </p>
+
+      <div class="chat_card" style="background:#101010; border:1px solid #222; border-radius:8px; padding:16px; max-width:900px;">
+        <div id="chat-log" style="height:320px; overflow:auto; background:#0b0b0b; border:1px solid #222; border-radius:6px; padding:12px;">
+          <!-- Messages get appended here -->
+          <div class="msg" style="margin-bottom:8px;"><strong>Bot:</strong> Hi! Ask me anything about this project.</div>
+        </div>
+
+        <form id="chat-form" style="display:flex; gap:8px; margin-top:12px;">
+          <input id="chat-input" type="text" placeholder="Type your message…" required
+                 style="flex:1; background:#111; border:1px solid #333; border-radius:4px; padding:10px 12px; color:#f1f1f1;">
+          <button class="submit_button" type="submit" style="margin:0;">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="section content">
+      <h2 class="section_title text_light_grey">Roadmap</h2>
+      <ul style="margin-left:20px; line-height:1.7;">
+        <li>✅ Frontend chat UI prototype</li>
+        <li>🔜 Flask/FastAPI backend with <code>POST /chat</code></li>
+        <li>🔜 Model integration (transformers / fine-tuning)</li>
+        <li>🔜 Optional RAG layer with vector search</li>
+        <li>🔜 Deployment & monitoring</li>
+      </ul>
+    </section>
+
+    <!-- Footer (loaded via shared footer.js) -->
+    <div id="footer"></div>
+  </main>
+
+  <!-- Page script (mock chat + date) -->
+  <script>
+    // Last updated (auto-filled to today's date — update manually if you prefer strict tracking)
+    document.getElementById('updated-date').textContent =
+      new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long' });
+
+    // Simple mock chatbot (replace with fetch to your API later)
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('chat-input');
+    const log = document.getElementById('chat-log');
+
+    function appendMessage(author, text) {
+      const el = document.createElement('div');
+      el.className = 'msg';
+      el.style.marginBottom = '8px';
+      el.innerHTML = `<strong>${author}:</strong> ${text}`;
+      log.appendChild(el);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function mockReply(userText) {
+      // Replace this with your real API call:
+      // return fetch('https://your-api/chat', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({message:userText}) })
+      //   .then(r => r.json()).then(d => d.reply);
+      const templates = [
+        "Interesting—I'll handle that by routing your message to the model layer.",
+        "This prototype runs entirely client-side; the backend will add real responses.",
+        "Great question! The next step is wiring the API and model.",
+        "I’ll store short-term context in session and add RAG for longer memory."
+      ];
+      const t = templates[Math.floor(Math.random() * templates.length)];
+      return Promise.resolve(t);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+      appendMessage('You', text);
+      input.value = '';
+      const reply = await mockReply(text);
+      appendMessage('Bot', reply);
+    });
+  </script>
+
+  <!-- Shared footer loader (adjust path if needed) -->
+  <script src="../scripts/footer.js" defer></script>
+</body>
+</html>
